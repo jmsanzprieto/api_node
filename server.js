@@ -71,7 +71,7 @@ app.put('/usuarios/:id_usuario', authenticateToken, (req, res) => {
     // Obtiene los datos actualizados del cuerpo de la solicitud
     const datosActualizados = req.body;
     // Actualiza los datos del usuario en la base de datos
-    connection.query('UPDATE usuarios SET ? WHERE id_usuario = ?', [datosActualizados, usuarioId], (error, results) => {
+    connection.query('UPDATE datos_usuarios SET ? WHERE id_usuario = ?', [datosActualizados, usuarioId], (error, results) => {
         if (error) {
             console.error('Error al actualizar el usuario:', error);
             return res.status(500).send('Error interno del servidor');
